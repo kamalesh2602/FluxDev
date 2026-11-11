@@ -5,7 +5,6 @@ along with lexer color mappings and strict Qt-compliant QSS stylesheet generatio
 Zero non-Qt CSS properties to ensure clean console output without warnings.
 """
 
-import os
 from PyQt6.QtGui import QColor
 
 # ----------------------------------------------------------------------
@@ -461,14 +460,6 @@ QSplitter::handle:hover {{
     return qss
 
 
-def save_active_qss(theme_name: str = "FluxDev Dark", output_path: str = None) -> str:
-    """Generates and writes editor/style.qss to disk."""
-    if not output_path:
-        base_dir = os.path.dirname(os.path.abspath(__file__))
-        output_path = os.path.join(base_dir, "style.qss")
-
-    content = generate_qss(theme_name)
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write(content)
-
-    return output_path
+# save_active_qss has been removed.
+# Apply QSS directly with QApplication.setStyleSheet(generate_qss(theme_name)).
+# Writing style.qss next to the source/bundle is unsafe in PyInstaller builds.

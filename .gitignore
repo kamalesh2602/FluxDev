@@ -7,6 +7,8 @@ env/
 __pycache__/
 *.py[cod]
 *$py.class
+.pytest_cache/
+.mypy_cache/
 
 # Environment variables
 .env
@@ -19,6 +21,7 @@ __pycache__/
 # Build artifacts
 build/
 dist/
+installer_output/
 *.egg-info/
 
 # Logs

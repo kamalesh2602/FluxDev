@@ -15,7 +15,7 @@ from PyQt6.QtWidgets import (
 )
 
 from .settings import SettingsManager
-from .themes import generate_qss, save_active_qss, THEMES
+from .themes import generate_qss, THEMES
 from .icons import get_svg_icon
 from .title_bar import CustomTitleBar
 from .tab_manager import TabManager
@@ -490,7 +490,6 @@ class MainWindow(QMainWindow):
 
         qss = generate_qss(theme_name)
         self.setStyleSheet(qss)
-        save_active_qss(theme_name)
 
         if theme_name == "FluxDev Dark":
             self.title_bar.btn_theme.setText("Dark")
