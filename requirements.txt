@@ -1,0 +1,6 @@
+PyQt6>=6.5.0
+PyQt6-QScintilla>=2.14.0
+PyQt6-WebEngine>=6.5.0
+beautifulsoup4>=4.12.0
+jsbeautifier>=2.0.0
+cssbeautifier>=2.0.0
